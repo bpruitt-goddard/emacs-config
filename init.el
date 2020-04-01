@@ -23,8 +23,11 @@ There are two things you can do about this warning:
 (eval-when-compile
   (require 'use-package))
 
-(use-package dracula-theme
-  :ensure t)
+;; Load org file for config
+(require 'org)
+(org-babel-load-file
+ (expand-file-name "config.org"
+                   user-emacs-directory))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
