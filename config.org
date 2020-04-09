@@ -35,3 +35,12 @@ Add syntax highlighting
 
 (add-hook 'csharp-mode-hook 'my-csharp-mode-hook)
 #+END_SRC
+
+* Org Mode
+Update org to lastest version
+
+#+Begin_SRC emacs-lisp
+(use-package org
+  :ensure org-plus-contrib
+  :pin org)
+#+END_SRC
