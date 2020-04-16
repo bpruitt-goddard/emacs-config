@@ -6,7 +6,6 @@ Always try to install missing packages.
 #+END_SRC
 
 * Graphics and Looks
-
 ** Font
 Use [[https://github.com/tonsky/FiraCode][Fira Code]] with the install instructions found [[https://github.com/tonsky/FiraCode][here]]. Enables both the font and its font ligatures.
 
@@ -90,9 +89,8 @@ Use `xah-fly-keys` for a better, more ergonomic modal editing mode.
 
 #+END_SRC
 
-** Languages
-
-* C#
+* Languages
+** C#
 
 Add syntax highlighting
 #+BEGIN_SRC emacs-lisp
@@ -101,8 +99,7 @@ Add syntax highlighting
 (defun my-csharp-mode-hook ()
   ;; Add auto pair/brace completion
   (electric-pair-mode 1)       ;; Emacs 24
-  (electric-pair-local-mode 1) ;; Emacs 25
-  )
+  (electric-pair-local-mode 1)) ;; Emacs 25
 
 (add-hook 'csharp-mode-hook 'my-csharp-mode-hook)
 #+END_SRC
@@ -115,3 +112,13 @@ Update org to lastest version
   :ensure org-plus-contrib
   :pin org)
 #+END_SRC
+
+* Buffer/File Management
+** Projectile Project Management
+Use projectile to interact with projects
+
+#+begin_src emacs-lisp
+(use-package projectile
+  :config
+  (projectile-global-mode))
+#+end_src
