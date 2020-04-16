@@ -122,3 +122,11 @@ Use projectile to interact with projects
   :config
   (projectile-global-mode))
 #+end_src
+
+** Helm Completion
+
+#+begin_src emacs-lisp
+(use-package helm
+  :init
+  (helm-mode 1))
+#+end_src
