@@ -90,6 +90,16 @@ Use `xah-fly-keys` for a better, more ergonomic modal editing mode.
 #+END_SRC
 
 * Languages
+** General
+
+Add autocompletion
+#+BEGIN_SRC emacs-lisp
+(use-package company
+  :diminish company-mode
+  :hook
+  (after-init . global-company-mode))
+#+END_SRC
+
 ** C#
 
 Add syntax highlighting
@@ -102,6 +112,20 @@ Add syntax highlighting
   (electric-pair-local-mode 1)) ;; Emacs 25
 
 (add-hook 'csharp-mode-hook 'my-csharp-mode-hook)
+#+END_SRC
+
+Add autocompletion
+#+BEGIN_SRC emacs-lisp
+(use-package omnisharp)
+(setq omnisharp-server-executable-path "/usr/local/Cellar/omnisharp-mono/1.35.2/bin/omnisharp")
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
+
+(eval-after-load
+ 'company
+ '(add-to-list 'company-backends 'company-omnisharp))
+
+(add-hook 'csharp-mode-hook #'company-mode)
 #+END_SRC
 
 * Org Mode
